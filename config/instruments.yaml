@@ -1,0 +1,156 @@
+# =====================================================================
+#  v1 MCX contracts (PLAN §1.1). Smallest contracts only (< Rs 2 lakh capital).
+#
+#  Lot sizes, tick sizes and expiries CHANGE. From Phase 1b the bot reads them
+#  from the Kite instrument file every morning and warns if this file differs.
+#  "verified: false" marks values not yet confirmed against Kite/MCX specs.
+#
+#  multiplier  = rupees gained/lost per 1-point price move, per lot
+#  quote_grams = grams in the price-quotation unit (metals only); used to
+#                convert COMEX USD/troy-oz benchmarks into MCX units
+# =====================================================================
+
+instruments:
+  # ---------------- Energy (cash-settled) ----------------
+  - symbol: CRUDEOILM
+    commodity: crude_oil
+    role: tradeable
+    lot: "10 bbl"
+    quote_unit: "Rs per bbl"
+    multiplier: 10
+    tick_size: 1.0
+    settlement: cash
+    cluster: energy
+    strategies: [S1, S2]
+    benchmark: CL=F
+    history_proxy: CRUDEOIL
+    expiry_rule: "around the 19th; a few business days before the NYMEX contract"
+    roll_days_before_expiry: 3
+    verified: false
+
+  - symbol: NATGASMINI
+    commodity: natural_gas
+    role: tradeable
+    lot: "250 mmBtu"
+    quote_unit: "Rs per mmBtu"
+    multiplier: 250
+    tick_size: 0.10
+    settlement: cash
+    cluster: energy
+    strategies: [S2]
+    benchmark: NG=F
+    history_proxy: NATURALGAS
+    expiry_rule: "end of month; a few business days before the NYMEX contract"
+    roll_days_before_expiry: 3
+    verified: false
+
+  # ---------------- Bullion (physical delivery) ----------------
+  - symbol: GOLDPETAL
+    commodity: gold
+    role: tradeable
+    lot: "1 g"
+    quote_unit: "Rs per 1 g"
+    quote_grams: 1
+    multiplier: 1
+    tick_size: 1.0
+    settlement: physical
+    cluster: bullion
+    strategies: [S1, S2, S3]
+    benchmark: GC=F
+    history_proxy: GOLD
+    expiry_rule: "monthly; check tender period in the MCX contract spec"
+    tender_period_days: 5
+    roll_days_before_expiry: 8      # tender period + 3 days of warning
+    verified: false
+
+  - symbol: GOLDGUINEA
+    commodity: gold
+    role: tradeable
+    lot: "8 g"
+    quote_unit: "Rs per 8 g"
+    quote_grams: 8
+    multiplier: 1
+    tick_size: 1.0
+    settlement: physical
+    cluster: bullion
+    strategies: [S1, S2, S3]
+    benchmark: GC=F
+    history_proxy: GOLD
+    expiry_rule: "monthly; check tender period in the MCX contract spec"
+    tender_period_days: 5
+    roll_days_before_expiry: 8
+    verified: false
+
+  - symbol: GOLDTEN
+    commodity: gold
+    role: tradeable
+    lot: "10 g"
+    quote_unit: "Rs per 10 g"
+    quote_grams: 10
+    multiplier: 1
+    tick_size: 1.0
+    settlement: physical
+    cluster: bullion
+    strategies: [S1, S2, S3]
+    benchmark: GC=F
+    history_proxy: GOLD
+    expiry_rule: "monthly; check tender period in the MCX contract spec"
+    tender_period_days: 5
+    roll_days_before_expiry: 8
+    verified: false
+
+  - symbol: SILVER100
+    commodity: silver
+    role: tradeable
+    lot: "100 g"
+    # ASSUMPTION: quoted per kg like the other silver contracts. Confirm the
+    # trading symbol, quote unit and tick from the Kite instrument file.
+    quote_unit: "Rs per kg"
+    quote_grams: 1000
+    multiplier: 0.1
+    tick_size: 1.0
+    settlement: physical
+    cluster: bullion
+    strategies: [S1, S2, S3]
+    benchmark: SI=F
+    history_proxy: SILVER
+    expiry_rule: "launched Jun 2026; check the MCX contract spec"
+    tender_period_days: 5
+    roll_days_before_expiry: 8
+    verified: false
+
+  - symbol: SILVERMIC
+    commodity: silver
+    role: tradeable
+    lot: "1 kg"
+    quote_unit: "Rs per kg"
+    quote_grams: 1000
+    multiplier: 1
+    tick_size: 1.0
+    settlement: physical
+    cluster: bullion
+    strategies: [S1, S2, S3]
+    benchmark: SI=F
+    history_proxy: SILVER
+    expiry_rule: "bi-monthly (Feb/Apr/Jun/Aug/Nov); check the MCX contract spec"
+    tender_period_days: 5
+    roll_days_before_expiry: 8
+    verified: false
+
+  # ---------------- History only (longer daily history; never signalled) ----
+  # Bigger contracts with 10+ years of data. The backtest uses their RETURNS
+  # to extend the small contracts' history (PLAN §5.2).
+  - {symbol: CRUDEOIL,   commodity: crude_oil,   role: history_only, lot: "100 bbl",   quote_unit: "Rs per bbl",   multiplier: 100,  tick_size: 1.0,  settlement: cash,     cluster: energy,  benchmark: CL=F, roll_days_before_expiry: 3, verified: false}
+  - {symbol: NATURALGAS, commodity: natural_gas, role: history_only, lot: "1250 mmBtu", quote_unit: "Rs per mmBtu", multiplier: 1250, tick_size: 0.10, settlement: cash,     cluster: energy,  benchmark: NG=F, roll_days_before_expiry: 3, verified: false}
+  - {symbol: GOLD,       commodity: gold,        role: history_only, lot: "1 kg",      quote_unit: "Rs per 10 g",  quote_grams: 10,   multiplier: 100, tick_size: 1.0, settlement: physical, cluster: bullion, benchmark: GC=F, tender_period_days: 5, roll_days_before_expiry: 8, verified: false}
+  - {symbol: GOLDM,      commodity: gold,        role: history_only, lot: "100 g",     quote_unit: "Rs per 10 g",  quote_grams: 10,   multiplier: 10,  tick_size: 1.0, settlement: physical, cluster: bullion, benchmark: GC=F, tender_period_days: 5, roll_days_before_expiry: 8, verified: false}
+  - {symbol: SILVER,     commodity: silver,      role: history_only, lot: "30 kg",     quote_unit: "Rs per kg",    quote_grams: 1000, multiplier: 30,  tick_size: 1.0, settlement: physical, cluster: bullion, benchmark: SI=F, tender_period_days: 5, roll_days_before_expiry: 8, verified: false}
+  - {symbol: SILVERM,    commodity: silver,      role: history_only, lot: "5 kg",      quote_unit: "Rs per kg",    quote_grams: 1000, multiplier: 5,   tick_size: 1.0, settlement: physical, cluster: bullion, benchmark: SI=F, tender_period_days: 5, roll_days_before_expiry: 8, verified: false}
+
+# International benchmarks (free, via Yahoo Finance) and the USD/INR rate.
+benchmarks:
+  GC=F: {name: "COMEX gold",         unit: "USD per troy oz"}
+  SI=F: {name: "COMEX silver",       unit: "USD per troy oz"}
+  CL=F: {name: "NYMEX WTI crude",    unit: "USD per bbl"}
+  NG=F: {name: "NYMEX natural gas",  unit: "USD per mmBtu"}
+  INR=X: {name: "USD/INR",           unit: "INR per USD"}

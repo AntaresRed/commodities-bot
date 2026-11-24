@@ -1,0 +1,79 @@
+# =====================================================================
+#  MCX signal bot: your settings
+#  The bot is SIGNALS-ONLY. It never places orders; you trade by hand.
+#  After editing, double-click start_bot.bat: it checks this file and
+#  tells you exactly which line is wrong if something is off.
+# =====================================================================
+
+# ---- The settings you will normally change --------------------------
+
+# Trading capital in rupees (used for position sizing and the loss limits).
+capital_inr: 200000
+
+# Most you are willing to lose on ONE trade if its stop-loss is hit,
+# as a % of capital. Choose 0.5 or 1.0 after the backtest report (PLAN §1.2).
+risk_per_trade_pct: 0.5
+
+# Risk per trade during your first live month (PLAN §4).
+first_live_month_risk_pct: 0.25
+
+# Intraday (S2) windows. Up to 5 candidates are tested; at most 2-3 are kept
+# after the activity scan and backtest (PLAN §3.2). "enabled" is what will
+# send live signals once Phase 3 is built; leave it empty until then.
+intraday_windows:
+  candidates: [W1_MCX_OPEN, W2_LONDON, US_SESSION, W5_EIA, W6_LATE]
+  enabled: []
+  max_live_windows: 3
+
+# ---- Loss limits (PLAN §4) -------------------------------------------
+# In signals-only mode a limit stops NEW signals and tells you what to close.
+limits:
+  daily_loss_pct: 2.0            # no new entries for the day
+  weekly_loss_pct: 4.0           # pause signals + alert
+  monthly_loss_pct: 8.0          # pause signals + alert
+  kill_switch_drawdown_pct: 15.0 # from peak equity: no signals until you restart after a review
+  s2_drawdown_halve_pct: 6.0     # S2 size halved after this drawdown from its own peak...
+  s2_drawdown_restore_pct: 3.0   # ...and restored once the drawdown is back under this
+  max_margin_use_pct: 45.0       # keep a buffer for MCX margin hikes
+  max_same_direction_per_cluster: 2   # gold+silver = one cluster, crude+natgas = another
+  max_intraday_trades_per_day: 3
+  max_trades_per_instrument_per_day: 1
+  stale_data_seconds: 30         # no tick for this long in market hours -> no new signals
+
+# ---- Strategy risk budget (PLAN §3), must add up to 100 ---------------
+strategy_budget_pct:
+  S1_trend: 50
+  S2_intraday: 30
+  S3_ratio: 20
+
+# ---- Daily routine ---------------------------------------------------
+schedule:
+  morning_message_time: "08:30"            # IST
+  squareoff_alert_minutes_before_broker_cutoff: 15
+  # Zerodha squares off MCX intraday positions this many minutes before the
+  # exchange close (it varies 25-55 min; check Zerodha's notice and adjust).
+  broker_squareoff_minutes_before_close: 25
+
+# ---- Costs used by the backtest (PLAN §5.1). All rates are fractions or rupees.
+# Verify against Zerodha's charges page before the backtest report.
+costs:
+  brokerage_mode: pct_capped           # "pct_capped" = 0.03% or Rs 20, whichever is lower; "flat" = Rs 20
+  brokerage_pct: 0.0003                # 0.03%
+  brokerage_cap_inr: 20.0
+  brokerage_flat_inr: 20.0
+  ctt_sell_pct: 0.0001                 # 0.01% on sell side (non-agri futures)
+  exchange_txn_pct: 0.00002            # about 0.002% of turnover, both sides
+  sebi_fee_per_crore_inr: 10.0
+  stamp_duty_buy_pct: 0.00002          # 0.002% on buy side
+  gst_pct: 0.18                        # on brokerage + exchange charges + SEBI fee
+  slippage_ticks_per_side: 1.0         # normal fill slippage
+  slippage_ticks_by_symbol:            # overrides for thinner / jumpier contracts
+    NATGASMINI: 2.0
+  manual_entry_extra_ticks: 1.0        # extra allowance because you place orders by hand
+  event_slippage_multiplier: 2.0       # around US data releases
+  data_plan_inr_per_month: 500.0       # Kite Connect plan, fixed cost
+  stress_multiplier: 1.0               # set 2.0 for the "profitable at 2x costs" gate
+
+# ---- Mode: do not change ----------------------------------------------
+# v1 is signals-only. Any other value is rejected on start-up.
+mode: signals_only

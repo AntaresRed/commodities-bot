@@ -1,0 +1,138 @@
+event,markets,date_et,time_et,datetime_ist,date_ist,time_ist,us_dst,verified,note,source
+EIA_NATGAS,natgas,2026-01-01,10:30,2026-01-01T21:00+05:30,2026-01-01,21:00,no,check,US holiday this week (New Year's Day); official page lists no change - confirm,https://ir.eia.gov/ngs/schedule.html
+EIA_CRUDE,crude,2026-01-07,10:30,2026-01-07T21:00+05:30,2026-01-07,21:00,no,rule,standard weekly release,https://www.eia.gov/petroleum/supply/weekly/schedule.php
+EIA_NATGAS,natgas,2026-01-08,10:30,2026-01-08T21:00+05:30,2026-01-08,21:00,no,rule,standard weekly release,https://ir.eia.gov/ngs/schedule.html
+NFP,all,2026-01-09,08:30,2026-01-09T19:00+05:30,2026-01-09,19:00,no,yes,Employment Situation for Dec 2025,https://www.bls.gov/schedule/2026/home.htm
+CPI,all,2026-01-13,08:30,2026-01-13T19:00+05:30,2026-01-13,19:00,no,yes,CPI for Dec 2025,https://www.bls.gov/schedule/2026/home.htm
+EIA_CRUDE,crude,2026-01-14,10:30,2026-01-14T21:00+05:30,2026-01-14,21:00,no,rule,standard weekly release,https://www.eia.gov/petroleum/supply/weekly/schedule.php
+EIA_NATGAS,natgas,2026-01-15,10:30,2026-01-15T21:00+05:30,2026-01-15,21:00,no,rule,standard weekly release,https://ir.eia.gov/ngs/schedule.html
+EIA_NATGAS,natgas,2026-01-22,10:30,2026-01-22T21:00+05:30,2026-01-22,21:00,no,check,US holiday this week (Martin Luther King Jr. Day); official page lists no change - confirm,https://ir.eia.gov/ngs/schedule.html
+EIA_CRUDE,crude,2026-01-22,12:00,2026-01-22T22:30+05:30,2026-01-22,22:30,no,yes,moved from 2026-01-21 (Martin Luther King Jr. Day),https://www.eia.gov/petroleum/supply/weekly/schedule.php
+EIA_CRUDE,crude,2026-01-28,10:30,2026-01-28T21:00+05:30,2026-01-28,21:00,no,rule,standard weekly release,https://www.eia.gov/petroleum/supply/weekly/schedule.php
+FOMC,all,2026-01-28,14:00,2026-01-29T00:30+05:30,2026-01-29,00:30,no,yes,FOMC decision (Jan 27-28); after MCX close: overnight gap risk,https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
+EIA_NATGAS,natgas,2026-01-29,10:30,2026-01-29T21:00+05:30,2026-01-29,21:00,no,rule,standard weekly release,https://ir.eia.gov/ngs/schedule.html
+EIA_CRUDE,crude,2026-02-04,10:30,2026-02-04T21:00+05:30,2026-02-04,21:00,no,rule,standard weekly release,https://www.eia.gov/petroleum/supply/weekly/schedule.php
+EIA_NATGAS,natgas,2026-02-05,10:30,2026-02-05T21:00+05:30,2026-02-05,21:00,no,rule,standard weekly release,https://ir.eia.gov/ngs/schedule.html
+NFP,all,2026-02-11,08:30,2026-02-11T19:00+05:30,2026-02-11,19:00,no,yes,Employment Situation for Jan 2026,https://www.bls.gov/schedule/2026/home.htm
+EIA_CRUDE,crude,2026-02-11,10:30,2026-02-11T21:00+05:30,2026-02-11,21:00,no,rule,standard weekly release,https://www.eia.gov/petroleum/supply/weekly/schedule.php
+EIA_NATGAS,natgas,2026-02-12,10:30,2026-02-12T21:00+05:30,2026-02-12,21:00,no,rule,standard weekly release,https://ir.eia.gov/ngs/schedule.html
+CPI,all,2026-02-13,08:30,2026-02-13T19:00+05:30,2026-02-13,19:00,no,yes,CPI for Jan 2026,https://www.bls.gov/schedule/2026/home.htm
+EIA_NATGAS,natgas,2026-02-19,10:30,2026-02-19T21:00+05:30,2026-02-19,21:00,no,check,US holiday this week (Presidents' Day); official page lists no change - confirm,https://ir.eia.gov/ngs/schedule.html
+EIA_CRUDE,crude,2026-02-19,12:00,2026-02-19T22:30+05:30,2026-02-19,22:30,no,yes,moved from 2026-02-18 (Presidents' Day),https://www.eia.gov/petroleum/supply/weekly/schedule.php
+EIA_CRUDE,crude,2026-02-25,10:30,2026-02-25T21:00+05:30,2026-02-25,21:00,no,rule,standard weekly release,https://www.eia.gov/petroleum/supply/weekly/schedule.php
+EIA_NATGAS,natgas,2026-02-26,10:30,2026-02-26T21:00+05:30,2026-02-26,21:00,no,rule,standard weekly release,https://ir.eia.gov/ngs/schedule.html
+EIA_CRUDE,crude,2026-03-04,10:30,2026-03-04T21:00+05:30,2026-03-04,21:00,no,rule,standard weekly release,https://www.eia.gov/petroleum/supply/weekly/schedule.php
+EIA_NATGAS,natgas,2026-03-05,10:30,2026-03-05T21:00+05:30,2026-03-05,21:00,no,rule,standard weekly release,https://ir.eia.gov/ngs/schedule.html
+NFP,all,2026-03-06,08:30,2026-03-06T19:00+05:30,2026-03-06,19:00,no,yes,Employment Situation for Feb 2026,https://www.bls.gov/schedule/2026/home.htm
+CPI,all,2026-03-11,08:30,2026-03-11T18:00+05:30,2026-03-11,18:00,yes,yes,CPI for Feb 2026,https://www.bls.gov/schedule/2026/home.htm
+EIA_CRUDE,crude,2026-03-11,10:30,2026-03-11T20:00+05:30,2026-03-11,20:00,yes,rule,standard weekly release,https://www.eia.gov/petroleum/supply/weekly/schedule.php
+EIA_NATGAS,natgas,2026-03-12,10:30,2026-03-12T20:00+05:30,2026-03-12,20:00,yes,rule,standard weekly release,https://ir.eia.gov/ngs/schedule.html
+EIA_CRUDE,crude,2026-03-18,10:30,2026-03-18T20:00+05:30,2026-03-18,20:00,yes,rule,standard weekly release,https://www.eia.gov/petroleum/supply/weekly/schedule.php
+FOMC,all,2026-03-18,14:00,2026-03-18T23:30+05:30,2026-03-18,23:30,yes,yes,"FOMC decision (Mar 17-18, with SEP); after MCX close: overnight gap risk",https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
+EIA_NATGAS,natgas,2026-03-19,10:30,2026-03-19T20:00+05:30,2026-03-19,20:00,yes,rule,standard weekly release,https://ir.eia.gov/ngs/schedule.html
+EIA_CRUDE,crude,2026-03-25,10:30,2026-03-25T20:00+05:30,2026-03-25,20:00,yes,rule,standard weekly release,https://www.eia.gov/petroleum/supply/weekly/schedule.php
+EIA_NATGAS,natgas,2026-03-26,10:30,2026-03-26T20:00+05:30,2026-03-26,20:00,yes,rule,standard weekly release,https://ir.eia.gov/ngs/schedule.html
+EIA_CRUDE,crude,2026-04-01,10:30,2026-04-01T20:00+05:30,2026-04-01,20:00,yes,rule,standard weekly release,https://www.eia.gov/petroleum/supply/weekly/schedule.php
+EIA_NATGAS,natgas,2026-04-02,10:30,2026-04-02T20:00+05:30,2026-04-02,20:00,yes,rule,standard weekly release,https://ir.eia.gov/ngs/schedule.html
+NFP,all,2026-04-03,08:30,2026-04-03T18:00+05:30,2026-04-03,18:00,yes,yes,Employment Situation for Mar 2026,https://www.bls.gov/schedule/2026/home.htm
+EIA_CRUDE,crude,2026-04-08,10:30,2026-04-08T20:00+05:30,2026-04-08,20:00,yes,rule,standard weekly release,https://www.eia.gov/petroleum/supply/weekly/schedule.php
+EIA_NATGAS,natgas,2026-04-09,10:30,2026-04-09T20:00+05:30,2026-04-09,20:00,yes,rule,standard weekly release,https://ir.eia.gov/ngs/schedule.html
+CPI,all,2026-04-10,08:30,2026-04-10T18:00+05:30,2026-04-10,18:00,yes,yes,CPI for Mar 2026,https://www.bls.gov/schedule/2026/home.htm
+EIA_CRUDE,crude,2026-04-15,10:30,2026-04-15T20:00+05:30,2026-04-15,20:00,yes,rule,standard weekly release,https://www.eia.gov/petroleum/supply/weekly/schedule.php
+EIA_NATGAS,natgas,2026-04-16,10:30,2026-04-16T20:00+05:30,2026-04-16,20:00,yes,rule,standard weekly release,https://ir.eia.gov/ngs/schedule.html
+EIA_CRUDE,crude,2026-04-22,10:30,2026-04-22T20:00+05:30,2026-04-22,20:00,yes,rule,standard weekly release,https://www.eia.gov/petroleum/supply/weekly/schedule.php
+EIA_NATGAS,natgas,2026-04-23,10:30,2026-04-23T20:00+05:30,2026-04-23,20:00,yes,rule,standard weekly release,https://ir.eia.gov/ngs/schedule.html
+EIA_CRUDE,crude,2026-04-29,10:30,2026-04-29T20:00+05:30,2026-04-29,20:00,yes,rule,standard weekly release,https://www.eia.gov/petroleum/supply/weekly/schedule.php
+FOMC,all,2026-04-29,14:00,2026-04-29T23:30+05:30,2026-04-29,23:30,yes,yes,FOMC decision (Apr 28-29); after MCX close: overnight gap risk,https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
+EIA_NATGAS,natgas,2026-04-30,10:30,2026-04-30T20:00+05:30,2026-04-30,20:00,yes,rule,standard weekly release,https://ir.eia.gov/ngs/schedule.html
+EIA_CRUDE,crude,2026-05-06,10:30,2026-05-06T20:00+05:30,2026-05-06,20:00,yes,rule,standard weekly release,https://www.eia.gov/petroleum/supply/weekly/schedule.php
+EIA_NATGAS,natgas,2026-05-07,10:30,2026-05-07T20:00+05:30,2026-05-07,20:00,yes,rule,standard weekly release,https://ir.eia.gov/ngs/schedule.html
+NFP,all,2026-05-08,08:30,2026-05-08T18:00+05:30,2026-05-08,18:00,yes,yes,Employment Situation for Apr 2026,https://www.bls.gov/schedule/2026/home.htm
+CPI,all,2026-05-12,08:30,2026-05-12T18:00+05:30,2026-05-12,18:00,yes,yes,CPI for Apr 2026,https://www.bls.gov/schedule/2026/home.htm
+EIA_CRUDE,crude,2026-05-13,10:30,2026-05-13T20:00+05:30,2026-05-13,20:00,yes,rule,standard weekly release,https://www.eia.gov/petroleum/supply/weekly/schedule.php
+EIA_NATGAS,natgas,2026-05-14,10:30,2026-05-14T20:00+05:30,2026-05-14,20:00,yes,rule,standard weekly release,https://ir.eia.gov/ngs/schedule.html
+EIA_CRUDE,crude,2026-05-20,10:30,2026-05-20T20:00+05:30,2026-05-20,20:00,yes,rule,standard weekly release,https://www.eia.gov/petroleum/supply/weekly/schedule.php
+EIA_NATGAS,natgas,2026-05-21,10:30,2026-05-21T20:00+05:30,2026-05-21,20:00,yes,rule,standard weekly release,https://ir.eia.gov/ngs/schedule.html
+EIA_NATGAS,natgas,2026-05-28,10:30,2026-05-28T20:00+05:30,2026-05-28,20:00,yes,check,US holiday this week (Memorial Day); official page lists no change - confirm,https://ir.eia.gov/ngs/schedule.html
+EIA_CRUDE,crude,2026-05-28,12:00,2026-05-28T21:30+05:30,2026-05-28,21:30,yes,yes,moved from 2026-05-27 (Memorial Day),https://www.eia.gov/petroleum/supply/weekly/schedule.php
+EIA_CRUDE,crude,2026-06-03,10:30,2026-06-03T20:00+05:30,2026-06-03,20:00,yes,rule,standard weekly release,https://www.eia.gov/petroleum/supply/weekly/schedule.php
+EIA_NATGAS,natgas,2026-06-04,10:30,2026-06-04T20:00+05:30,2026-06-04,20:00,yes,rule,standard weekly release,https://ir.eia.gov/ngs/schedule.html
+NFP,all,2026-06-05,08:30,2026-06-05T18:00+05:30,2026-06-05,18:00,yes,yes,Employment Situation for May 2026,https://www.bls.gov/schedule/2026/home.htm
+CPI,all,2026-06-10,08:30,2026-06-10T18:00+05:30,2026-06-10,18:00,yes,yes,CPI for May 2026,https://www.bls.gov/schedule/2026/home.htm
+EIA_CRUDE,crude,2026-06-10,10:30,2026-06-10T20:00+05:30,2026-06-10,20:00,yes,rule,standard weekly release,https://www.eia.gov/petroleum/supply/weekly/schedule.php
+EIA_NATGAS,natgas,2026-06-11,10:30,2026-06-11T20:00+05:30,2026-06-11,20:00,yes,rule,standard weekly release,https://ir.eia.gov/ngs/schedule.html
+EIA_CRUDE,crude,2026-06-17,10:30,2026-06-17T20:00+05:30,2026-06-17,20:00,yes,rule,standard weekly release,https://www.eia.gov/petroleum/supply/weekly/schedule.php
+FOMC,all,2026-06-17,14:00,2026-06-17T23:30+05:30,2026-06-17,23:30,yes,yes,"FOMC decision (Jun 16-17, with SEP); after MCX close: overnight gap risk",https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
+EIA_NATGAS,natgas,2026-06-18,10:30,2026-06-18T20:00+05:30,2026-06-18,20:00,yes,check,US holiday this week (Juneteenth); official page lists no change - confirm,https://ir.eia.gov/ngs/schedule.html
+EIA_CRUDE,crude,2026-06-24,10:30,2026-06-24T20:00+05:30,2026-06-24,20:00,yes,rule,standard weekly release,https://www.eia.gov/petroleum/supply/weekly/schedule.php
+EIA_NATGAS,natgas,2026-06-25,10:30,2026-06-25T20:00+05:30,2026-06-25,20:00,yes,rule,standard weekly release,https://ir.eia.gov/ngs/schedule.html
+EIA_CRUDE,crude,2026-07-01,10:30,2026-07-01T20:00+05:30,2026-07-01,20:00,yes,rule,standard weekly release,https://www.eia.gov/petroleum/supply/weekly/schedule.php
+NFP,all,2026-07-02,08:30,2026-07-02T18:00+05:30,2026-07-02,18:00,yes,yes,Employment Situation for Jun 2026,https://www.bls.gov/schedule/2026/home.htm
+EIA_NATGAS,natgas,2026-07-02,10:30,2026-07-02T20:00+05:30,2026-07-02,20:00,yes,check,US holiday this week (Independence Day); official page lists no change - confirm,https://ir.eia.gov/ngs/schedule.html
+EIA_CRUDE,crude,2026-07-08,10:30,2026-07-08T20:00+05:30,2026-07-08,20:00,yes,rule,standard weekly release,https://www.eia.gov/petroleum/supply/weekly/schedule.php
+EIA_NATGAS,natgas,2026-07-09,10:30,2026-07-09T20:00+05:30,2026-07-09,20:00,yes,rule,standard weekly release,https://ir.eia.gov/ngs/schedule.html
+CPI,all,2026-07-14,08:30,2026-07-14T18:00+05:30,2026-07-14,18:00,yes,yes,CPI for Jun 2026,https://www.bls.gov/schedule/2026/home.htm
+EIA_CRUDE,crude,2026-07-15,10:30,2026-07-15T20:00+05:30,2026-07-15,20:00,yes,rule,standard weekly release,https://www.eia.gov/petroleum/supply/weekly/schedule.php
+EIA_NATGAS,natgas,2026-07-16,10:30,2026-07-16T20:00+05:30,2026-07-16,20:00,yes,rule,standard weekly release,https://ir.eia.gov/ngs/schedule.html
+EIA_CRUDE,crude,2026-07-22,10:30,2026-07-22T20:00+05:30,2026-07-22,20:00,yes,rule,standard weekly release,https://www.eia.gov/petroleum/supply/weekly/schedule.php
+EIA_NATGAS,natgas,2026-07-23,10:30,2026-07-23T20:00+05:30,2026-07-23,20:00,yes,rule,standard weekly release,https://ir.eia.gov/ngs/schedule.html
+EIA_CRUDE,crude,2026-07-29,10:30,2026-07-29T20:00+05:30,2026-07-29,20:00,yes,rule,standard weekly release,https://www.eia.gov/petroleum/supply/weekly/schedule.php
+FOMC,all,2026-07-29,14:00,2026-07-29T23:30+05:30,2026-07-29,23:30,yes,yes,FOMC decision (Jul 28-29); after MCX close: overnight gap risk,https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
+EIA_NATGAS,natgas,2026-07-30,10:30,2026-07-30T20:00+05:30,2026-07-30,20:00,yes,rule,standard weekly release,https://ir.eia.gov/ngs/schedule.html
+EIA_CRUDE,crude,2026-08-05,10:30,2026-08-05T20:00+05:30,2026-08-05,20:00,yes,rule,standard weekly release,https://www.eia.gov/petroleum/supply/weekly/schedule.php
+EIA_NATGAS,natgas,2026-08-06,10:30,2026-08-06T20:00+05:30,2026-08-06,20:00,yes,rule,standard weekly release,https://ir.eia.gov/ngs/schedule.html
+NFP,all,2026-08-07,08:30,2026-08-07T18:00+05:30,2026-08-07,18:00,yes,yes,Employment Situation for Jul 2026,https://www.bls.gov/schedule/2026/home.htm
+CPI,all,2026-08-12,08:30,2026-08-12T18:00+05:30,2026-08-12,18:00,yes,yes,CPI for Jul 2026,https://www.bls.gov/schedule/2026/home.htm
+EIA_CRUDE,crude,2026-08-12,10:30,2026-08-12T20:00+05:30,2026-08-12,20:00,yes,rule,standard weekly release,https://www.eia.gov/petroleum/supply/weekly/schedule.php
+EIA_NATGAS,natgas,2026-08-13,10:30,2026-08-13T20:00+05:30,2026-08-13,20:00,yes,rule,standard weekly release,https://ir.eia.gov/ngs/schedule.html
+EIA_CRUDE,crude,2026-08-19,10:30,2026-08-19T20:00+05:30,2026-08-19,20:00,yes,rule,standard weekly release,https://www.eia.gov/petroleum/supply/weekly/schedule.php
+EIA_NATGAS,natgas,2026-08-20,10:30,2026-08-20T20:00+05:30,2026-08-20,20:00,yes,rule,standard weekly release,https://ir.eia.gov/ngs/schedule.html
+EIA_CRUDE,crude,2026-08-26,10:30,2026-08-26T20:00+05:30,2026-08-26,20:00,yes,rule,standard weekly release,https://www.eia.gov/petroleum/supply/weekly/schedule.php
+EIA_NATGAS,natgas,2026-08-27,10:30,2026-08-27T20:00+05:30,2026-08-27,20:00,yes,rule,standard weekly release,https://ir.eia.gov/ngs/schedule.html
+EIA_CRUDE,crude,2026-09-02,10:30,2026-09-02T20:00+05:30,2026-09-02,20:00,yes,rule,standard weekly release,https://www.eia.gov/petroleum/supply/weekly/schedule.php
+EIA_NATGAS,natgas,2026-09-03,10:30,2026-09-03T20:00+05:30,2026-09-03,20:00,yes,rule,standard weekly release,https://ir.eia.gov/ngs/schedule.html
+NFP,all,2026-09-04,08:30,2026-09-04T18:00+05:30,2026-09-04,18:00,yes,yes,Employment Situation for Aug 2026,https://www.bls.gov/schedule/2026/home.htm
+EIA_NATGAS,natgas,2026-09-10,10:30,2026-09-10T20:00+05:30,2026-09-10,20:00,yes,check,US holiday this week (Labor Day); official page lists no change - confirm,https://ir.eia.gov/ngs/schedule.html
+EIA_CRUDE,crude,2026-09-10,12:00,2026-09-10T21:30+05:30,2026-09-10,21:30,yes,yes,moved from 2026-09-09 (Labor Day),https://www.eia.gov/petroleum/supply/weekly/schedule.php
+CPI,all,2026-09-11,08:30,2026-09-11T18:00+05:30,2026-09-11,18:00,yes,yes,CPI for Aug 2026,https://www.bls.gov/schedule/2026/home.htm
+EIA_CRUDE,crude,2026-09-16,10:30,2026-09-16T20:00+05:30,2026-09-16,20:00,yes,rule,standard weekly release,https://www.eia.gov/petroleum/supply/weekly/schedule.php
+FOMC,all,2026-09-16,14:00,2026-09-16T23:30+05:30,2026-09-16,23:30,yes,yes,"FOMC decision (Sep 15-16, with SEP); after MCX close: overnight gap risk",https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
+EIA_NATGAS,natgas,2026-09-17,10:30,2026-09-17T20:00+05:30,2026-09-17,20:00,yes,rule,standard weekly release,https://ir.eia.gov/ngs/schedule.html
+EIA_CRUDE,crude,2026-09-23,10:30,2026-09-23T20:00+05:30,2026-09-23,20:00,yes,rule,standard weekly release,https://www.eia.gov/petroleum/supply/weekly/schedule.php
+EIA_NATGAS,natgas,2026-09-24,10:30,2026-09-24T20:00+05:30,2026-09-24,20:00,yes,rule,standard weekly release,https://ir.eia.gov/ngs/schedule.html
+EIA_CRUDE,crude,2026-09-30,10:30,2026-09-30T20:00+05:30,2026-09-30,20:00,yes,rule,standard weekly release,https://www.eia.gov/petroleum/supply/weekly/schedule.php
+EIA_NATGAS,natgas,2026-10-01,10:30,2026-10-01T20:00+05:30,2026-10-01,20:00,yes,rule,standard weekly release,https://ir.eia.gov/ngs/schedule.html
+NFP,all,2026-10-02,08:30,2026-10-02T18:00+05:30,2026-10-02,18:00,yes,yes,Employment Situation for Sep 2026,https://www.bls.gov/schedule/2026/home.htm
+EIA_CRUDE,crude,2026-10-07,10:30,2026-10-07T20:00+05:30,2026-10-07,20:00,yes,rule,standard weekly release,https://www.eia.gov/petroleum/supply/weekly/schedule.php
+EIA_NATGAS,natgas,2026-10-08,10:30,2026-10-08T20:00+05:30,2026-10-08,20:00,yes,rule,standard weekly release,https://ir.eia.gov/ngs/schedule.html
+CPI,all,2026-10-14,08:30,2026-10-14T18:00+05:30,2026-10-14,18:00,yes,yes,CPI for Sep 2026,https://www.bls.gov/schedule/2026/home.htm
+EIA_NATGAS,natgas,2026-10-15,10:30,2026-10-15T20:00+05:30,2026-10-15,20:00,yes,check,US holiday this week (Columbus Day); official page lists no change - confirm,https://ir.eia.gov/ngs/schedule.html
+EIA_CRUDE,crude,2026-10-15,12:00,2026-10-15T21:30+05:30,2026-10-15,21:30,yes,yes,moved from 2026-10-14 (Columbus Day),https://www.eia.gov/petroleum/supply/weekly/schedule.php
+EIA_CRUDE,crude,2026-10-21,10:30,2026-10-21T20:00+05:30,2026-10-21,20:00,yes,rule,standard weekly release,https://www.eia.gov/petroleum/supply/weekly/schedule.php
+EIA_NATGAS,natgas,2026-10-22,10:30,2026-10-22T20:00+05:30,2026-10-22,20:00,yes,rule,standard weekly release,https://ir.eia.gov/ngs/schedule.html
+EIA_CRUDE,crude,2026-10-28,10:30,2026-10-28T20:00+05:30,2026-10-28,20:00,yes,rule,standard weekly release,https://www.eia.gov/petroleum/supply/weekly/schedule.php
+FOMC,all,2026-10-28,14:00,2026-10-28T23:30+05:30,2026-10-28,23:30,yes,yes,FOMC decision (Oct 27-28); after MCX close: overnight gap risk,https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
+EIA_NATGAS,natgas,2026-10-29,10:30,2026-10-29T20:00+05:30,2026-10-29,20:00,yes,rule,standard weekly release,https://ir.eia.gov/ngs/schedule.html
+EIA_CRUDE,crude,2026-11-04,10:30,2026-11-04T21:00+05:30,2026-11-04,21:00,no,rule,standard weekly release,https://www.eia.gov/petroleum/supply/weekly/schedule.php
+EIA_NATGAS,natgas,2026-11-05,10:30,2026-11-05T21:00+05:30,2026-11-05,21:00,no,rule,standard weekly release,https://ir.eia.gov/ngs/schedule.html
+NFP,all,2026-11-06,08:30,2026-11-06T19:00+05:30,2026-11-06,19:00,no,yes,Employment Situation for Oct 2026,https://www.bls.gov/schedule/2026/home.htm
+CPI,all,2026-11-10,08:30,2026-11-10T19:00+05:30,2026-11-10,19:00,no,yes,CPI for Oct 2026,https://www.bls.gov/schedule/2026/home.htm
+EIA_CRUDE,crude,2026-11-12,12:00,2026-11-12T22:30+05:30,2026-11-12,22:30,no,yes,moved from 2026-11-11 (Veterans Day),https://www.eia.gov/petroleum/supply/weekly/schedule.php
+EIA_NATGAS,natgas,2026-11-13,10:30,2026-11-13T21:00+05:30,2026-11-13,21:00,no,yes,moved from 2026-11-12 (Veterans Day),https://ir.eia.gov/ngs/schedule.html
+EIA_CRUDE,crude,2026-11-18,10:30,2026-11-18T21:00+05:30,2026-11-18,21:00,no,rule,standard weekly release,https://www.eia.gov/petroleum/supply/weekly/schedule.php
+EIA_NATGAS,natgas,2026-11-19,10:30,2026-11-19T21:00+05:30,2026-11-19,21:00,no,rule,standard weekly release,https://ir.eia.gov/ngs/schedule.html
+EIA_CRUDE,crude,2026-11-25,10:30,2026-11-25T21:00+05:30,2026-11-25,21:00,no,check,US holiday this week (Thanksgiving Day); official page lists no change - confirm,https://www.eia.gov/petroleum/supply/weekly/schedule.php
+EIA_NATGAS,natgas,2026-11-25,12:00,2026-11-25T22:30+05:30,2026-11-25,22:30,no,yes,moved from 2026-11-26 (Thanksgiving Day),https://ir.eia.gov/ngs/schedule.html
+EIA_CRUDE,crude,2026-12-02,10:30,2026-12-02T21:00+05:30,2026-12-02,21:00,no,rule,standard weekly release,https://www.eia.gov/petroleum/supply/weekly/schedule.php
+EIA_NATGAS,natgas,2026-12-03,10:30,2026-12-03T21:00+05:30,2026-12-03,21:00,no,rule,standard weekly release,https://ir.eia.gov/ngs/schedule.html
+NFP,all,2026-12-04,08:30,2026-12-04T19:00+05:30,2026-12-04,19:00,no,yes,Employment Situation for Nov 2026,https://www.bls.gov/schedule/2026/home.htm
+EIA_CRUDE,crude,2026-12-09,10:30,2026-12-09T21:00+05:30,2026-12-09,21:00,no,rule,standard weekly release,https://www.eia.gov/petroleum/supply/weekly/schedule.php
+FOMC,all,2026-12-09,14:00,2026-12-10T00:30+05:30,2026-12-10,00:30,no,yes,"FOMC decision (Dec 8-9, with SEP); after MCX close: overnight gap risk",https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm
+CPI,all,2026-12-10,08:30,2026-12-10T19:00+05:30,2026-12-10,19:00,no,yes,CPI for Nov 2026,https://www.bls.gov/schedule/2026/home.htm
+EIA_NATGAS,natgas,2026-12-10,10:30,2026-12-10T21:00+05:30,2026-12-10,21:00,no,rule,standard weekly release,https://ir.eia.gov/ngs/schedule.html
+EIA_CRUDE,crude,2026-12-16,10:30,2026-12-16T21:00+05:30,2026-12-16,21:00,no,rule,standard weekly release,https://www.eia.gov/petroleum/supply/weekly/schedule.php
+EIA_NATGAS,natgas,2026-12-17,10:30,2026-12-17T21:00+05:30,2026-12-17,21:00,no,rule,standard weekly release,https://ir.eia.gov/ngs/schedule.html
+EIA_CRUDE,crude,2026-12-23,10:30,2026-12-23T21:00+05:30,2026-12-23,21:00,no,rule,standard weekly release,https://www.eia.gov/petroleum/supply/weekly/schedule.php
+EIA_NATGAS,natgas,2026-12-24,10:30,2026-12-24T21:00+05:30,2026-12-24,21:00,no,check,US holiday this week (Christmas Day); official page lists no change - confirm,https://ir.eia.gov/ngs/schedule.html
+EIA_CRUDE,crude,2026-12-30,10:30,2026-12-30T21:00+05:30,2026-12-30,21:00,no,rule,standard weekly release,https://www.eia.gov/petroleum/supply/weekly/schedule.php
+EIA_NATGAS,natgas,2026-12-31,10:30,2026-12-31T21:00+05:30,2026-12-31,21:00,no,rule,standard weekly release,https://ir.eia.gov/ngs/schedule.html

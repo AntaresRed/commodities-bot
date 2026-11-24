@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcx-signal-bot"
+version = "0.1.0"
+description = "Signals-only MCX commodities bot (see PLAN.md). Never places orders."
+requires-python = ">=3.11"
+# Dependencies are pinned in requirements.txt (installed by start_bot.bat).
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q"
+markers = [
+    "network: test needs internet access (skipped unless RUN_NETWORK_TESTS=1)",
+]
