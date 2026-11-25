@@ -58,10 +58,7 @@ def test_read_wrappers(broker):
     assert "***" in repr(broker)
 
 
-def test_key_dependent_parts_are_stubbed(broker):
-    from datetime import date
-    with pytest.raises(NotImplementedError, match="Phase 1b"):
-        broker.historical(1, date(2026, 1, 1), date(2026, 2, 1))
+def test_remaining_stubs(broker):
     with pytest.raises(NotImplementedError):
         broker.stream_ticks([1], lambda ticks: None)
     with pytest.raises(NotImplementedError):

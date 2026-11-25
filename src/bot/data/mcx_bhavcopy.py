@@ -5,9 +5,10 @@ Denied" to every scripted request, including the bhavcopy page, its data
 endpoint and even robots.txt. The bot does not try to get around that block.
 `check_mcx_access()` makes ONE plain request so you can see if this changes.
 
-How to download (README "MCX history"): save the CSV/Excel files from MCX
-(Market Data -> Bhavcopy, or Market Data -> Historical Data) into
-data/raw/mcx/ and run `python -m bot.data.mcx_bhavcopy` (or start_bot.bat).
+mcxindia.com only offers Bhav Copy as one day or one contract per file (its
+"Historical Data" page has turnover totals, no prices), so long history comes
+from Kite instead (Phase 1b). Bhav Copy CSV/Excel files saved into
+data/raw/mcx/ are still imported, for spot checks.
 
 The importer accepts the usual MCX column names in any order, finds the header
 row even if the file has title lines above it, keeps only commodity futures
@@ -57,8 +58,8 @@ for canon, names in {
     "low": ["low", "lowprice"],
     "close": ["close", "closeprice", "closingprice"],
     "settle": ["settlementprice", "settleprice", "settlement"],
-    "prev_close": ["previousclose", "prevclose", "previousclosingprice", "pclose"],
-    "volume_lots": ["volumelots", "volume", "volumeinlots", "tradedvolume", "tradedquantitylots",
+    "prev_close": ["previousclose", "prevclose", "previousclosingprice", "pclose", "pcp"],
+    "volume_lots": ["volumelots", "vollots", "volume", "volumeinlots", "tradedvolume", "tradedquantitylots",
                     "tradedqtylots", "contracts", "noofcontracts"],
     "value_lakhs": ["valueinlakhs", "valuelakhs", "valuerslakhs", "value", "turnoverlakhs"],
     "oi_lots": ["openinterestlots", "openinterest", "oi", "openinterestinlots", "oilots"],
@@ -158,6 +159,9 @@ def _to_date(s: pd.Series) -> pd.Series:
     s = s.astype(str).str.strip()
     out = pd.to_datetime(s, format="%Y%m%d", errors="coerce")
     rest = out.isna()
+    if rest.any():  # MCX Bhav Copy writes expiries like 30NOV2026
+        out[rest] = pd.to_datetime(s[rest].str.upper(), format="%d%b%Y", errors="coerce")
+        rest = out.isna()
     if rest.any():
         out[rest] = pd.to_datetime(s[rest], dayfirst=True, format="mixed", errors="coerce")
     return out.dt.normalize()
@@ -234,15 +238,13 @@ def coverage(df: pd.DataFrame) -> pd.DataFrame:
 
 
 MANUAL_INSTRUCTIONS = f"""
-The MCX website blocks automated downloads, so this step is done by hand (once,
-then a few minutes a month to top up). Full steps are in README.md, "MCX history".
+No MCX files found. That is fine: the long daily history will come from Kite
+(continuous daily candles) once your Kite Connect app works (Phase 1b).
 
-  1. Open {MCX_HISTORICAL_PAGE} (or {MCX_BHAVCOPY_PAGE}) in your browser.
-  2. Choose Futures, then each symbol in turn: CRUDEOILM, CRUDEOIL, NATGASMINI,
-     NATURALGAS, GOLDPETAL, GOLDGUINEA, GOLDTEN, GOLDM, GOLD, SILVERMIC, SILVERM,
-     SILVER and the Silver 100 contract. Pick a date range and download CSV or Excel.
-  3. Save every file into:  {paths.MCX_RAW_DIR}
-  4. Run start_bot.bat again (or: python -m bot.data.mcx_bhavcopy).
+Bulk download from mcxindia.com by hand is not practical (Bhav Copy is one day
+or one contract per file). To add a few files anyway, save Bhav Copy CSV/Excel
+files from {MCX_BHAVCOPY_PAGE}
+into {paths.MCX_RAW_DIR} and run this again.
 """
 
 

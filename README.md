@@ -72,16 +72,17 @@ You'll find your **chat ID** after Step 5. The bot only ever answers that ID and
 
 `.env` stays on your PC. It's excluded from git, the bot never prints or logs its values, and you should never send it to anyone (including me).
 
-### Step 6: MCX price history (manual download)
+### Step 6: MCX price history (nothing to do by hand)
 
-The MCX website blocks automated downloads (it returns "Access Denied" to scripts), so this one is done by hand. Once Kite is connected, the bot will also pull Kite's daily history for expired contracts, so this step makes the history longer and more accurate. It isn't a blocker.
+The long daily history comes from **Kite** once your Kite Connect app works: Kite gives daily "continuous" candles for expired futures, and the bot will download them itself (Phase 1b).
 
-1. Open **https://www.mcxindia.com/market-data/historical-data** in your browser (or *Market Data → Bhavcopy* for one day at a time).
-2. Choose **Futures**, then one symbol at a time, a date range, and **download as CSV or Excel**. Symbols to get:
-   `CRUDEOILM, CRUDEOIL, NATGASMINI, NATURALGAS, GOLDPETAL, GOLDGUINEA, GOLDTEN, GOLDM, GOLD, SILVERMIC, SILVERM, SILVER`, plus the new Silver 100 contract.
-   Go back as far as the site allows, ideally 10+ years for the big contracts. If the site limits the date range, download year by year.
-3. Save all the files into the **`data\raw\mcx\`** folder. File names don't matter.
-4. Double-click **`tools\import_mcx_files.bat`** (or `start_bot.bat`). It lists, for each symbol, the date range and number of contracts it found, and tells you about any file it couldn't read.
+Downloading years of history from mcxindia.com by hand is not practical. Checked on 25 Nov 2026:
+- *Market Data → Historical Data* only has yearly volume and turnover totals, with no prices.
+- *Market Data → Bhav Copy → Date Wise* has daily prices back to 2003, but **one day per file** (thousands of files for 10 years).
+- *Bhav Copy → Commodity Wise* takes a date range, but **one contract per download**, and only contracts expiring from Apr 2025 onwards are listed.
+
+The importer still reads Bhav Copy files (CSV or Excel) if you ever want to add a few: save them into `data
+aw\mcx\` and double-click `tools\import_mcx_files.bat`. Useful later for spot-checking Kite's data, not needed now.
 
 ### Step 7: Start the bot
 
@@ -110,9 +111,21 @@ If you make a mistake, `start_bot.bat` tells you which line is wrong. Changing `
 
 ---
 
-## What happens next (needs your Kite keys)
+## Getting real MCX history from Kite
 
-- **Phase 1b:** Kite daily history for expired contracts (continuous) and minute history for live contracts. The bot starts recording 1-minute bars from the live feed. Then the **activity scan** checks which intraday windows have real volume spikes. After that you get a data report and a go/no-go on whether to buy multi-year intraday history (nothing is bought without your OK).
+Once your Kite Connect app and `.env` keys are set up:
+
+1. Double-click **`tools\kite_download.bat`**. If you haven't logged in today, your browser opens the Kite login first. The download is **read-only market data** and takes a few minutes. It saves:
+   - years of **daily** history for each contract (Kite's "continuous" series of expired futures),
+   - about a year of **1-minute** bars for the contracts still trading (Kite has no minute data for expired contracts),
+   - today's contract list, plus a check of Zerodha's real lot and tick sizes against `config\instruments.yaml`.
+
+   A summary is saved to `reports\kite_download.txt`.
+2. Double-click **`tools\run_mcx_backtest.bat`**. It runs the S1/S3 backtest on **real MCX prices** and opens `reports\mcx_backtest.md`.
+
+## What happens next
+
+- **Phase 1b (rest):** the **activity scan** on the minute data checks which intraday windows have real volume spikes. Then you get a data report and a go/no-go on whether intraday history must be bought for S2 (nothing is bought without your OK).
 - **Phase 2:** backtests of S1–S3 at your real capital with full costs, then the backtest report with pass/fail gates.
 - **Phase 3:** live signals, the risk manager, the morning message, and model-vs-your P&L tracking.
 
@@ -125,6 +138,9 @@ If you make a mistake, `start_bot.bat` tells you which line is wrong. Changing `
 set RUN_NETWORK_TESTS=1 && .venv\Scripts\python -m pytest -m network
 .venv\Scripts\python -m bot.live.runner --no-listen     # what start_bot.bat runs
 .venv\Scripts\python -m bot.data.events                 # regenerate config\events_YYYY.csv
+.venv\Scripts\python -m bot.backtest.proxy              # proxy backtest of S1/S3 -> reports\proxy_backtest.md
+.venv\Scripts\python -m bot.data.kite_history           # download MCX history from Kite (needs login)
+.venv\Scripts\python -m bot.backtest.proxy --source kite # S1/S3 on real MCX prices -> reports\mcx_backtest.md
 ```
 
 | Path | What |
@@ -134,7 +150,7 @@ set RUN_NETWORK_TESTS=1 && .venv\Scripts\python -m pytest -m network
 | `src/bot/broker/` | read-only interface (`broker_base.py`), Zerodha adapter, daily Kite login (`kite_auth.py`) |
 | `src/bot/notify/telegram.py` | signals with Taken/Skipped buttons, `/status`, a mock transport for tests |
 | `src/bot/signals/` | signal format + journal (SQLite + JSON-lines backup) |
-| `src/bot/data/` | MCX importer, Yahoo benchmarks, continuous contracts, quality checks, event calendar; `kite_history.py` holds the stubs for the parts that need Kite keys |
+| `src/bot/data/` | MCX importer, Yahoo benchmarks, continuous contracts, quality checks, event calendar; `kite_history.py` downloads Kite history (live recorder and activity scan still to come) |
 | `src/bot/backtest/costs.py` | cost model (PLAN §5.1), every rate set in `settings.yaml` |
 | `data/`, `logs/`, `reports/`, `.env` | git-ignored |
 

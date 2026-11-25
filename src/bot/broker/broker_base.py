@@ -14,7 +14,7 @@ from typing import Literal
 
 import pandas as pd
 
-Interval = Literal["minute", "5minute", "15minute", "day"]
+Interval = Literal["minute", "3minute", "5minute", "10minute", "15minute", "30minute", "60minute", "day"]
 
 # Names of order-type operations that must never exist on a v1 adapter.
 FORBIDDEN_METHODS = frozenset({

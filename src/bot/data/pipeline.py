@@ -37,7 +37,7 @@ def update_mcx(instruments: InstrumentsFile) -> tuple[pd.DataFrame, list[str]]:
     df, rep = mcx_bhavcopy.import_folder(symbols=symbols)
     lines = [rep.summary()]
     if df.empty:
-        lines.append("MCX history: no files in data/raw/mcx yet (see README 'MCX history')")
+        lines.append("MCX history: no files in data/raw/mcx yet (long history will come from Kite; see README step 6)")
         return df, lines
     df.to_parquet(paths.PROCESSED_DIR / "mcx_daily.parquet", index=False)
     cov = mcx_bhavcopy.coverage(df)

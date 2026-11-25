@@ -72,3 +72,21 @@ def test_column_aliases():
 def test_empty_folder(tmp_path):
     df, rep = mb.import_folder(tmp_path)
     assert df.empty and rep.files == []
+
+
+# Column layout of mcxindia.com -> Market Data -> Bhav Copy (checked 25 Nov 2026)
+SITE_BHAVCOPY_CSV = """Date,Instrument,Commodity,Expiry Date,Option Type,Strike Price,Open,High,Low,Close,PCP,Vol (Lots),Volume (000's),Value (Lakhs),OI (Lots)
+24 Nov 2026,FUTCOM,GOLDTEN,30NOV2026,-,-,"76,100","76,400","75,900","76,250","76,050",1500,15.000 KGS,"11,437.50",900
+24 Nov 2026,FUTCOM,GOLDTEN,26FEB2027,-,-,,,,"77,300","77,300",0,0.000 KGS,0.00,0
+"""
+
+
+def test_reads_site_bhavcopy_layout(tmp_path):
+    p = tmp_path / "site.csv"
+    p.write_text(SITE_BHAVCOPY_CSV, encoding="utf-8")
+    df, bad = mb.clean_mcx(mb.read_mcx_file(p), symbols={"GOLDTEN"})
+    assert bad == 0 and len(df) == 2
+    near = df[df["expiry"] == pd.Timestamp("2026-11-30")].iloc[0]
+    assert (near["close"], near["volume_lots"], near["oi_lots"]) == (76250, 1500, 900)
+    far = df[df["expiry"] == pd.Timestamp("2027-02-26")].iloc[0]
+    assert not far["traded"] and far["open"] == far["low"] == 77300
